@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +14,8 @@
 */
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
-const Route = use('Route')
+const Route = use("Route");
 
-Route.resource('/users', 'UserController').apiOnly();
+Route.get("/", ({ response }) => {
+  return response.send({ message: "The API is running..." });
+});

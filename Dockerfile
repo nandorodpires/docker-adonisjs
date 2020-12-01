@@ -8,4 +8,4 @@ COPY package.json $HOME
 WORKDIR $HOME
 RUN npm i -g @adonisjs/cli && npm install
 
-CMD ["adonis", "serve --dev"]
+CMD ["npm", "start-dev"]
