@@ -1,11 +1,13 @@
-FROM node:alpine
+FROM node:12.18.4
 
-ENV HOME=/app
-RUN mkdir /app
+WORKDIR /app
 
-COPY package.json $HOME
+COPY package*.json ./
 
-WORKDIR $HOME
 RUN npm i -g @adonisjs/cli && npm install
 
-CMD ["npm", "start-dev"]
+COPY . .
+
+EXPOSE 3333
+
+CMD ["/init.sh"]
